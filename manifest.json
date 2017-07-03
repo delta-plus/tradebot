@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "TradeBot",
+  "description": "Helps you trade!",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "trade.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "https://rocket-league.com/trade/*"  
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://rocket-league.com/trade/*"
+    ],
+    "js": ["trade.js"],
+    "run_at": "document_end"
+  }]
+}
